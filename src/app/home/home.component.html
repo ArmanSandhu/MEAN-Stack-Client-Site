@@ -1,0 +1,67 @@
+<div class="header clearfix">
+  <h3 class="text-muted">COMP 3913 MEAN Stack</h3>
+</div>
+<div class="jumbotron">
+  <h2>Welcome</h2>
+  <p class="lead">This is the Client Side website built by Arman Sandhu for COMP 3913.</p>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <h4>Zenith Society</h4>
+    <p>The Zenith Society, is a family oriented non-for-profit organization that holds events during the week. The organization's staff require an Admin site in order to manage events and activities.
+      The member of the society also require a separate calendar site to view what events are taking place and at what time.
+    </p>
+  </div>
+  <div class="col-lg-6">
+    <h4>Requirements</h4>
+    <ul>
+      <li>The Public Facing Site(this site!) is powered via Angular 2 and should display the active events in a list format, with dates adjusted to represent only events occuring during the current week.</li>
+      <li>The Admin Site is a Node.js/Express site that uses the EJS view engine. Users can create, update, delete both activities and events. This site will also provide a REST API for the Public Facing Site so the events can be displayed to members.</li>
+      <li>Mongo Labs is used to store all data.</li>
+      <li>A CreationDate is internally stored with all Activities and Events for logging purposes.</li>
+      <li>Only Events that have their isActive property set to true can be displayed on the Public Site.</li>
+      <li>Two Data Models are used, Activity and Event.</li>
+    </ul>
+    <div class="col-md-6">
+      <ul>
+        <li><b>Activity</b></li>
+        <li>Activity ID</li>
+        <li>Activity Description (became Activity Name through error)</li>
+        <li>Creation Date</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        <li><b>Event</b></li>
+        <li>Event ID</li>
+        <li>Event Start Date</li>
+        <li>Event End Date</li>
+        <li>Activity</li>
+        <li>Is Active</li>
+        <li>Creation Date</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <h4>Changes Made to Public Site</h4>
+    <p>By default, the Calendar shows the month of December 2017, although this can be changed. This is because most of the active events are in that month. There is also an event in June of 2018. 
+      An event can be clicked on to show more details, such as Start and End Date. If the REST API cannot be accessed, an error is displayed and the page can be refreshed to check the REST API once again for data.</p>
+    <p>
+      Instead of listing the active events via a list format, I've used a Javascript Event Calendar library called <a src="https://fullcalendar.io/">FullCalendar</a>. However, the
+      version I'm using has been adapted for use alongside Angular 2 and can be found at <a src="https://github.com/nekken/ng2-fullcalendar">GitHub</a>. It took some finessing but I was able to make it work. The Public Facing site also uses the deprecated Angular2 Materials
+      UI component library to implement the sliding hidden nav.
+    </p>
+  </div>
+  <div class="col-lg-6">
+    <h4>Changes Made to Admin Site</h4>
+    <p>
+      Generally speaking, the Admin Site follows all the original requirements of the assignment. Error Messages are displayed and regex is performed to check for valid entries in all forms. The only added functionality is that upon the creation or update of an event, if the start and end time
+       falls within the current week, then the event isActive property is set to true by default, otherwise it is set to false.
+    </p>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>Arman Sandhu, 2017</p>
+  </div>
+</footer>

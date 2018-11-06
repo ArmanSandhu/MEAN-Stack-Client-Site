@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav mode="push" class="app-sidenav">
+    <div class="sidenav-title">
+      <h2>Menu</h2>
+    </div>
+
+    <md-nav-list>
+      <a md-list-item [routerLink]="['/home']" routerLinkActive="active" (click)="sidenav.toggle()">Home</a>
+      <a md-list-item [routerLink]="['/calendar']" routerLinkActive="active" (click)="sidenav.toggle()">Calendar</a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    <h1 class="toolbar-title">Zenith Society Public Site</h1>
+  </md-toolbar>
+  <div class="app-content container">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-layout>

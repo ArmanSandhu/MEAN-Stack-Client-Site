@@ -1,0 +1,19 @@
+md-sidenav{
+    width: 200px;
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.sidenav-title{
+    text-align: center;
+    background-color: darkcyan;
+    height: auto;
+}
+
+.toolbar-title{
+    margin-left: 15px;
+}
+
+.container{
+    margin-top: 40px;
+}
