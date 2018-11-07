@@ -7,8 +7,11 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CalendarService {
 
-  //url of the rest service
-  private eventsUrl = "http://localhost:3000/calendar/";
+  //url of the rest service - local
+  //private eventsUrl = "http://localhost:3000/calendar/";
+
+  //url of rest service - heroku hosted
+  private eventsUrl = "https://node-calendar-restservice.herokuapp.com/calendar/";
 
   constructor(private http: Http) { }
 
